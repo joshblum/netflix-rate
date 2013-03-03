@@ -53,3 +53,7 @@ body {
     width: 50%;
     margin: 0px auto;
 }
+
+.hero-unit{
+    background-color:#DDD !important;
+}
