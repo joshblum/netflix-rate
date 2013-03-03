@@ -8,19 +8,19 @@ app = flask.Flask(__name__)
 
 @app.route("/")
 def index():
-    return render_template('home.html')
+    return render_template('home.html', title="downloads")
 
 @app.route("/preview")
 def preview():
-    return render_template('preview.html')
+    return render_template('preview.html', title="preview")
 
 @app.errorhandler(404)
 def page_not_found(error):
-    return render_template('404.html'), 404
+    return render_template('404.html', title=404), 404
 
 @app.errorhandler(500)
 def page_not_found(error):
-    return render_template('500.html'), 500
+    return render_template('500.html', title=500), 500
 
 if __name__ == "__main__":
     app.config.from_pyfile("env.py")
