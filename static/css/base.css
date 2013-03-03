@@ -53,7 +53,3 @@ body {
     width: 50%;
     margin: 0px auto;
 }
-
-.btn > a:hover{
-    text-decoration: none;
-}
