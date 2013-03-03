@@ -42,3 +42,15 @@ body {
 .top-pad {
     margin-top:75px;
 }
+
+.fb-like {
+    top:-3px;
+}
+
+.offset-mid{
+    margin-left:480px;
+}
+
+.btn > a:hover{
+    text-decoration: none;
+}

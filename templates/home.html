@@ -3,35 +3,37 @@
 {% block content %}
 
 
-<div class="hero-unit span6 offset2 top-pad">
+<div class="hero-unit span6 offset2 top-pad download">
    
-  <h1 id="hero"> netflix-rate</h1>
+  <h1 id="hero"> netflix-rate </h1>
     <p> 
-        Get your very own Chrome or Firefox extension that adds IMDB and Rotten Tomato ratings to the Netflix webpage.
+        Get the Chrome or Firefox extension that adds IMDB and Rotten Tomato ratings to the Netflix webpage.
     </p>
 
     <div class="row">
         <div class="span3">
-            <h3> 
-                <img class="ext-icon" src="static/img/chrome-logo.png">
-                <a class="btn btn-large" href="https://chrome.google.com/webstore/detail/netflix-rate/ecaaapiecdienibfgolcopgnicppkmhn?hl=en">Chrome Download &raquo;</a> 
-            </h3>
+            <img class="ext-icon" src="static/img/chrome-logo.png">
+            <a class="btn btn-large" href="https://chrome.google.com/webstore/detail/netflix-rate/ecaaapiecdienibfgolcopgnicppkmhn?hl=en">Chrome Download &raquo;</a> 
 
         </div>
         <div class="span3">
-            <h3> 
-                <img class="ext-icon" src="static/img/firefox-logo.png">
-                <a class="btn btn-large" href="#">Firefox Download &raquo;</a>
-            </h3>
+            <img class="ext-icon" src="static/img/firefox-logo.png">
+            <a class="btn btn-large" href="#">Firefox Download &raquo;</a>
         </div>
     </div>
-    <div class="row offset2">
-        <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-url="netflix-rate.herokuapp.com" data-text="I just downloaded #netflix-rate for Chrome, get yours here:" data-size="large">Tweet</a>
+    <br>
+    <div class="row offset1">
+        <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-url="netflix-rate.herokuapp.com" data-text="I just downloaded #netflix-rate for Chrome, get yours here:">Tweet</a>
+
+        <div class="g-plusone" data-size="medium" data-annotation="bubble"></div>
+
+        <div class="fb-like" data-href="http://netflix-rate.herokuapp.com" data-send="false" data-layout="button_count" data-width="300" data-show-faces="true" data-font="arial" data-action="like"></div>
     </div>
 </div>
-<div class="row offset4 btn btn-large">
-    Preview Screenshots
-</div>
+
+<p class="row offset-mid btn btn-large"> 
+    <a href="/preview"> Preview <i class="icon-play"></i></a>
+</p>
 
 {% endblock %}
 

@@ -10,6 +10,10 @@ app = flask.Flask(__name__)
 def index():
     return render_template('home.html')
 
+@app.route("/preview")
+def preview():
+    return render_template('preview.html')
+
 @app.errorhandler(404)
 def page_not_found(error):
     return render_template('404.html'), 404
