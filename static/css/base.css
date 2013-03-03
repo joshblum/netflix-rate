@@ -2,8 +2,8 @@ html, body {
     height: 100%; /* The html and body elements cannot have any padding or margin. */
 }
 
-body {
-    margin-top:60px;
+.top-pad {
+    margin-top:25px;
 }
 
 
@@ -18,7 +18,7 @@ body {
 
 /* Set the fixed height of the footer here */
 .push, .footer {
-    height: 60px;
+    height:60px;
     margin-top:15px;
 }
 
@@ -50,7 +50,8 @@ body {
 }
 
 .offset-mid{
-    margin-left:480px;
+    width: 50%;
+    margin: 0px auto;
 }
 
 .btn > a:hover{

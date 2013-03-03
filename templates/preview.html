@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div id="myCarousel" class="carousel slide">
+<div id="myCarousel" class="carousel slide top-pad">
     <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -28,7 +28,9 @@
     <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
 </div>
 
-<p class="row offset-mid btn btn-large"> 
-    <i class="icon-home"></i><a href="/"> Home </a>
-</p>
+<div class="offset-mid">
+    <span class="offset2 row btn btn-large"> 
+        <i class="icon-home"></i><a href="/"> Home </a>
+    </span>
+</div>
 {% endblock %}
