@@ -1,35 +1,20 @@
-html, body {
-    height: 100%; /* The html and body elements cannot have any padding or margin. */
-}
-
-.top-pad {
-    margin-top:25px;
-}
-
-
-/* Wrapper for page content to push down footer */
-.wrap {
-    min-height: 100%;
-    height: auto !important;
+html {
     height: 100%;
-    /* Negative indent footer by it's height */
-    margin: 0 auto -60px;
 }
-
-/* Set the fixed height of the footer here */
-.push, .footer {
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    position: relative;
+}
+.push {
+    height: 60px;
+}
+.footer {
+    position: absolute;
+    bottom:0;
+    width:100%;
     height:60px;
-    margin-top:15px;
-}
-
-/* Lastly, apply responsive CSS fixes as necessary */
-@media (max-width: 767px) {
-    .footer {
-        margin-left: -20px;
-        margin-right: -20px;
-        padding-left: 20px;
-        padding-right: 20px;
-    }
 }
 
 body {
@@ -41,8 +26,13 @@ body {
 }
 
 .ext-icon {
-    width:45px;
-    height:45px;
+    width:40px;
+    height:40px;
+}
+
+.icon {
+    width: 16px;
+    height: 16px;
 }
 
 .fb-like {
@@ -56,4 +46,69 @@ body {
 
 .hero-unit{
     background-color:#DDD !important;
+    padding: 40px 0 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.hero-unit .heading {
+    margin-left: 148px;
+    margin-bottom: 22px;
+}
+
+.hero-unit .heading img {
+    height: 128px;
+    width: 128px;
+    float:left;
+}
+
+.hero-unit .heading h1{
+    padding-top: 6px;
+}
+
+.hero-unit .heading h2{
+    font-weight: 200;
+    font-size: 18px;
+    line-height: 22px;
+    vertical-align: top;
+    margin-top: 5px;
+}
+
+.hero-unit h5 {
+    color: #666;
+    text-align: center;
+}
+
+.chrome {
+    float:left;
+    margin-left: 110px;
+}
+
+.firefox {
+    float:right;
+    text-align:right;
+    margin-right: 110px;
+}
+
+.share {
+    clear:both;
+    height: 25px;
+    overflow: hidden;
+    text-align: center;
+    padding: 15px 0 0px;
+}
+.subshare {
+    display: none;
+}
+
+.hero-unit .desc {
+    text-align: justify;
+}
+
+.preview {
+    border-top: 1px solid #CCC;
+}
+
+.top-pad{
+    margin-top:20px;
 }

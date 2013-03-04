@@ -26,4 +26,8 @@ function loadSharing(){
 
 $(document).ready(function(){
       loadSharing();
+      $('.carousel').carousel()
+      setTimeout(function(){
+            $(".subshare").fadeIn();
+      }, 2000);
 })

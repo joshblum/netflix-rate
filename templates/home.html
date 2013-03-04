@@ -2,41 +2,60 @@
 
 {% block content %}
 
+<div class="row top-pad">
+    <div class="span8 offset2">
+        <div class="hero-unit">
+            <div class="heading clearfix">
+                <img src="/static/img/netflix-128.png">
+                <h1>netflix-rate</h1>
+                <h2>IMDB and Rotten Tomato ratings for Netflix.</h2>
+            </div>
 
-<div class="hero-unit span6 offset2 top-pad">
-   
-  <h1 id="hero"> <img src="/static/img/netflix-128.png"> netflix-rate </h1>
-    <p>
-        Get the Chrome or Firefox extension that adds IMDB and Rotten Tomato ratings to the Netflix webpage.
-    </p>
-    <br>
-    <div class="row">
-        <div class="span3">
-            <img class="ext-icon" src="static/img/chrome-logo.png">
-            <a class="btn btn-large" href="https://chrome.google.com/webstore/detail/netflix-rate/ecaaapiecdienibfgolcopgnicppkmhn?hl=en" target="_blank">Chrome Download &raquo;</a> 
+            <div class="chrome">
+                <img class="ext-icon" src="static/img/chrome-logo.png">
+                <a class="btn btn-large" href="https://chrome.google.com/webstore/detail/netflix-rate/ecaaapiecdienibfgolcopgnicppkmhn?hl=en" target="_blank">Get it for Chrome &raquo;</a> 
+            </div>
+            <div class="firefox">
+                <img class="ext-icon" src="static/img/firefox-logo.png">
+                <a class="btn btn-large" href=" https://addons.mozilla.org/en-us/firefox/addon/netflix-rate/" target="_blank" >Get it for Firefox &raquo;</a>
+            </div>
 
+            <div class="share">
+                <div class="subshare">
+                    <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-url="http://netflix-rate.herokuapp.com" data-text="I just downloaded #netflix-rate, get yours here:"></a>
+
+                    <div class="g-plusone" data-size="medium" data-annotation="bubble"></div>
+
+                    <div class="fb-like" data-href="http://netflix-rate.herokuapp.com" data-send="false" data-layout="button_count" data-width="300" data-show-faces="true" data-font="arial" data-action="like"></div>
+                </div>
+            </div>
+
+            <h5>Preview</h5>
+            <div id="myCarousel" class="carousel slide">
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+                <!-- Carousel items -->
+                <div class="carousel-inner">
+                    <div class="active item preview">
+                        <img src="/static/img/filmstrip/main-fresh.png">
+                    </div>
+                    <div class="item preview">
+                        <img src="/static/img/filmstrip/dvd-fresh.png">
+                    </div>
+                    <div class="item preview">
+                        <img src="/static/img/filmstrip/search-rotten.png">
+                    </div>
+                </div>
+                <!-- Carousel nav -->
+                <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+                <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+            </div>
         </div>
-        <div class="span3">
-            <img class="ext-icon" src="static/img/firefox-logo.png">
-            <a class="btn btn-large" href=" https://addons.mozilla.org/en-us/firefox/addon/netflix-rate/" target="_blank" >Firefox Download &raquo;</a>
-        </div>
+
     </div>
-    <br>
-    <div class="row offset1">
-        <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-url="http://netflix-rate.herokuapp.com" data-text="I just downloaded #netflix-rate, get yours here:">Tweet</a>
-
-        <div class="g-plusone" data-size="medium" data-annotation="bubble"></div>
-
-        <div class="fb-like" data-href="http://netflix-rate.herokuapp.com" data-send="false" data-layout="button_count" data-width="300" data-show-faces="true" data-font="arial" data-action="like"></div>
-    </div>
-</div>
-
-<div class="offset-mid">
-    <a href="/preview">
-        <span class="offset2 row btn btn-large"> 
-            Preview <i class="icon-play"></i>
-        </span>
-    </a>
 </div>
 {% endblock %}
 
