@@ -29,5 +29,5 @@ $(document).ready(function(){
       $('.carousel').carousel()
       setTimeout(function(){
             $(".subshare").fadeIn();
-      }, 2000);
+      }, 2500);
 })
