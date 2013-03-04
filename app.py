@@ -3,8 +3,20 @@ import flask
 import os
 
 from flask import render_template
+from flask.ext.assets import Environment, Bundle
+from flask_gzip import Gzip
+
 
 app = flask.Flask(__name__)
+assets = Environment(app)
+gzip = Gzip(app)
+
+js = Bundle('js/jquery-1.8.2.min.js', 'js/bootstrap-carousel.js', 'js/es5-shim.min.js', 'js/home.js', output='js/netflix-rate.min.js')
+
+css = Bundle('css/reset.css', 'css/bootstrap.css', 'css/bootstrap-responsive.css', 'css/base.css', output='css/netflix-rate.min.css')
+
+assets.register('js_all', js)
+assets.register('css_all', css)
 
 @app.route("/")
 def index():
