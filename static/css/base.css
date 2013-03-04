@@ -49,9 +49,10 @@ body {
 
 .hero-unit{
     background-color:#DDD !important;
-    padding: 40px 0 0;
+    padding: 20px 0 0;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
+    margin-bottom:15px;
 }
 
 .hero-unit .heading {
