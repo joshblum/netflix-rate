@@ -15,7 +15,7 @@ body {
 
 .footer {
     width:100%;
-    height:60px;
+    height:42px;
     position: absolute;
     bottom:0px;
 }
@@ -28,8 +28,8 @@ body {
     background: url("/static/img/bg-nav.png")  repeat top left;
 }
 
-.container{
-    margin-top:20px;
+.top-pad{
+    margin-top:15px;
 }
 
 .ext-icon {
@@ -114,4 +114,16 @@ body {
 
 .chrome, .firefox {
     margin-left:0px;
+}
+
+@media (max-width: 767px) {
+    .chrome, .firefox {
+        margin-left: 57px
+    }
+}
+
+@media (max-width: 767px) and (orientation: landscape) {
+    .chrome, .firefox {
+        margin-left: 128px
+    }
 }
