@@ -120,6 +120,18 @@ body {
     .chrome, .firefox {
         margin-left: 57px
     }
+
+    .hero-unit h2 {
+        margin-left:15px;
+    }
+
+    .share {
+        margin-left:10px;
+    }
+
+    .fb-like{
+        padding-right: 0px;
+    }
 }
 
 @media (max-width: 767px) and (orientation: landscape) {
