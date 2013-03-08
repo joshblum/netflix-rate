@@ -22,6 +22,14 @@ function loadSharing(){
             po.src = 'https://apis.google.com/js/plusone.js';
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
       })();
+
+      //HN
+      (function(d, t) {
+            var g = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+            g.src = 'http://hnbutton.appspot.com/static/hn.min.js';
+            s.parentNode.insertBefore(g, s);
+      }(document, 'script'));
 }
 
 $(document).ready(function(){

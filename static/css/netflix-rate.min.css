@@ -6968,9 +6968,8 @@ body {
 .share {
     clear:both;
     height: 25px;
-    overflow: hidden;
     text-align: center;
-    padding: 15px 0 0px;
+    padding: 15px 0px 0px;
 }
 
 .subshare {
@@ -6979,7 +6978,11 @@ body {
 
 .fb-like {
     top:-3px;
-    padding-right:30px;
+    padding-right:35px;
+}
+
+.hn-share-button {
+    padding-right: 30px;
 }
 
 .hero-unit .desc {
@@ -7008,13 +7011,25 @@ body {
         margin-left:15px;
     }
 
+    .hero-unit h1 {
+        margin-left:15px;
+    }
+
     .share {
         margin-left:10px;
+        padding-bottom: 15px;
     }
 
     .fb-like{
-        padding-right: 0px;
+        margin-left: -14px;
+        margin-right: 39px;
     }
+
+    .hn-share-iframe {
+        margin-left:-42px;
+    }
+
+
 }
 
 @media (max-width: 767px) and (orientation: landscape) {
