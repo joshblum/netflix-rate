@@ -6911,7 +6911,7 @@ body {
     background: url("/static/img/bg-nav.png")  repeat top left;
 }
 
-.top-pad{
+.top-pad {
     margin-top:15px;
 }
 
@@ -6925,17 +6925,20 @@ body {
     height: 16px;
 }
 
-.offset-mid{
+.offset-mid {
     width: 50%;
     margin: 0px auto;
 }
 
-.hero-unit{
+.hero-unit {
     background-color:#DDD !important;
-    padding: 20px 0 0;
+    margin-bottom:15px;
+}
+
+.download-unit {
+        padding: 20px 0 0;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
-    margin-bottom:15px;
 }
 
 .hero-unit .heading {
@@ -6948,11 +6951,11 @@ body {
     float:left;
 }
 
-.hero-unit .heading h1{
+.hero-unit .heading h1 {
     padding-top: 6px;
 }
 
-.hero-unit .heading h2{
+.hero-unit .heading h2 {
     font-weight: 200;
     font-size: 18px;
     line-height: 22px;
