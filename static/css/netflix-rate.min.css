@@ -7005,6 +7005,10 @@ body {
     margin-left:0px;
 }
 
+.blog-icon {
+    padding-bottom:4px;
+}
+
 @media (max-width: 767px) {
     .chrome, .firefox {
         margin-left: 57px
@@ -7032,7 +7036,15 @@ body {
         margin-left:-42px;
     }
 
+    .navbar .nav > li > a {
+        padding-right: 3px;
+        padding-left: 3px;
+    }
 
+    .navbar-inner {
+        padding-right:8px;
+        padding-left: 8px;
+    }
 }
 
 @media (max-width: 767px) and (orientation: landscape) {
