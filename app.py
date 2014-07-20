@@ -100,7 +100,7 @@ class User(db.Model):
     return {
         'uuid': self.uuid,
         'ip_addr': self.ip_addr,
-        'src': src,
+        'src': self.src,
         'created_at': str(self.created_at)
     }
 
