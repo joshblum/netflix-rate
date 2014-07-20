@@ -9,7 +9,6 @@ import flask.ext.sqlalchemy as sqlalchemy
 
 from datetime import datetime
 
-import env
 import flask
 import requests
 import os
