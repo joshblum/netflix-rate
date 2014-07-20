@@ -11,9 +11,10 @@ from datetime import datetime
 
 import env
 import flask
+import requests
 import os
 
-EMAIL_URL = "http://u-mail.herokuapp.com/send?payload=%s"
+EMAIL_URL = 'http://u-mail.herokuapp.com/send?to=joshblum@mit.edu&payload=%s'
 USER_COUNT = 10000 # send an email every 10k users
 
 
@@ -53,13 +54,14 @@ def page_not_found(error):
 def track():
   uuid = request.form.get('uuid')
   ip_addr = request.remote_addr
+  src = request.form.get('src')
 
   success = False
   user = None
 
   if uuid and ip_addr:
     try:
-      user = User(uuid, ip_addr)
+      user = User(uuid, ip_addr, src)
       db.session.add(user)
       db.session.commit()
       user = user.to_dict()
@@ -76,7 +78,7 @@ def track():
 def _send_mail():
   user_count = User.query.count()
   if user_count > 0 and not user_count % USER_COUNT:
-    payload = "%d unique users" % user_count
+    payload = '%d unique users.' % user_count
     requests.get(EMAIL_URL % payload)
 
 class User(db.Model):
@@ -84,10 +86,12 @@ class User(db.Model):
   uuid = db.Column(db.String(60), unique=True)
   created_at = db.Column(db.DateTime)
   ip_addr = db.Column(db.String(40), unique=True)
+  src = db.Column(db.String(10))
 
-  def __init__(self, uuid, ip_addr):
+  def __init__(self, uuid, ip_addr, src):
     self.uuid = uuid
     self.ip_addr = ip_addr
+    self.src = src # chrome or firefox
     self.created_at = datetime.utcnow()
 
   def __repr__(self):
@@ -97,6 +101,7 @@ class User(db.Model):
     return {
         'uuid': self.uuid,
         'ip_addr': self.ip_addr,
+        'src': src,
         'created_at': str(self.created_at)
     }
 
