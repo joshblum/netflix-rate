@@ -13,6 +13,9 @@ import env
 import flask
 import os
 
+EMAIL_URL = "http://u-mail.herokuapp.com/send?payload=%s"
+USER_COUNT = 10000 # send an email every 10k users
+
 
 app = flask.Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
@@ -55,6 +58,7 @@ def track():
       db.session.commit()
       user = user.to_dict()
       success = True
+      _send_mail()
     except sqlalchemy.sqlalchemy.exc.IntegrityError:
       user = None
 
@@ -63,6 +67,11 @@ def track():
       'user' : user,
       })
 
+def _send_mail():
+  user_count = User.query.count()
+  if user_count > 0 and not user_count % USER_COUNT:
+    payload = "%d unique users" % user_count
+    requests.get(EMAIL_URL % payload)
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)

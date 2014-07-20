@@ -4,3 +4,4 @@ Flask-Assets==0.8
 Flask-gzip==0.1
 gunicorn==0.17.2
 psycopg2==2.5.3
+requests==2.3.0
