@@ -19,7 +19,7 @@ USER_COUNT = 10000 # send an email every 10k users
 
 
 app = flask.Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
+app.config.from_object(os.environ['APP_SETTINGS'])
 
 db = SQLAlchemy(app)
 assets = Environment(app)
@@ -106,7 +106,6 @@ class User(db.Model):
     }
 
 if __name__ == '__main__':
-  app.config.from_pyfile('env.py')
   host = '0.0.0.0'
   port = int(os.environ.get('PORT', 7070))
   app.run(host=host, port=port)
