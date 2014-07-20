@@ -1,4 +1,6 @@
 Flask==0.9
+Flask-SQLAlchemy==1.0
 Flask-Assets==0.8
 Flask-gzip==0.1
 gunicorn==0.17.2
+psycopg2==2.5.3
