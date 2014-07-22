@@ -66,7 +66,8 @@ def track():
       user = user.to_dict()
       success = True
       _send_mail()
-    except sqlalchemy.sqlalchemy.exc.IntegrityError:
+    except sqlalchemy.sqlalchemy.exc.IntegrityError as e:
+      print e
       user = None
 
   return jsonify(**{
@@ -84,7 +85,7 @@ class User(db.Model):
   id = db.Column(db.Integer, primary_key=True)
   uuid = db.Column(db.String(60), unique=True)
   created_at = db.Column(db.DateTime)
-  ip_addr = db.Column(db.String(40), unique=True)
+  ip_addr = db.Column(db.String(40))
   src = db.Column(db.String(10))
 
   def __init__(self, uuid, ip_addr, src):
