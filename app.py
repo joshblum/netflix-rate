@@ -97,7 +97,7 @@ class User(db.Model):
     else:
       try:
         self.created_at = datetime.strptime(created_at, DATE_FMT)
-      except ValueErorr as e:
+      except ValueError as e:
         print e
         self.created_at = datetime.utcnow()
 
