@@ -14,7 +14,7 @@ import requests
 import os
 
 EMAIL_URL = 'http://u-mail.herokuapp.com/send?to=joshblum@mit.edu&payload=%s'
-USER_COUNT = 10000 # send an email every 10k users
+USER_COUNT = 10000  # send an email every 10k users
 DATE_FMT = '%Y-%m-%d %H:%M:%S.%f'
 
 app = flask.Flask(__name__)
@@ -75,11 +75,13 @@ def track():
       'user': user,
   })
 
+
 def _send_mail():
   user_count = User.query.count()
   if user_count > 0 and not user_count % USER_COUNT:
     payload = '%d unique users.' % user_count
     requests.get(EMAIL_URL % payload)
+
 
 class User(db.Model):
   id = db.Column(db.Integer, primary_key=True)
@@ -91,7 +93,7 @@ class User(db.Model):
   def __init__(self, uuid, ip_addr, src, created_at=None):
     self.uuid = uuid
     self.ip_addr = ip_addr
-    self.src = src # chrome or firefox
+    self.src = src  # chrome or firefox
     if created_at is None:
       self.created_at = datetime.utcnow()
     else:
