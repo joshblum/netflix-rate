@@ -15,7 +15,7 @@ import os
 
 EMAIL_URL = 'http://u-mail.herokuapp.com/send?to=joshblum@mit.edu&payload=%s'
 USER_COUNT = 10000 # send an email every 10k users
-
+DATE_FMT = '%Y-%m-%d %H:%M:%S.%f'
 
 app = flask.Flask(__name__)
 app.config.from_object(os.environ['APP_SETTINGS'])
@@ -88,11 +88,18 @@ class User(db.Model):
   ip_addr = db.Column(db.String(40))
   src = db.Column(db.String(10))
 
-  def __init__(self, uuid, ip_addr, src):
+  def __init__(self, uuid, ip_addr, src, created_at=None):
     self.uuid = uuid
     self.ip_addr = ip_addr
     self.src = src # chrome or firefox
-    self.created_at = datetime.utcnow()
+    if created_at is None:
+      self.created_at = datetime.utcnow()
+    else:
+      try:
+        self.created_at = datetime.strptime(created_at, DATE_FMT)
+      except ValueErorr as e:
+        print e
+        self.created_at = datetime.utcnow()
 
   def __repr__(self):
     return str(self.__dict__)
