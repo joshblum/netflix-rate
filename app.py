@@ -21,9 +21,9 @@ DATE_FMT = '%Y-%m-%d %H:%M:%S.%f'
 app = flask.Flask(__name__)
 app.config.from_object(os.environ['APP_SETTINGS'])
 
+gzip = Gzip(app)
 db = SQLAlchemy(app)
 assets = Environment(app)
-gzip = Gzip(app)
 
 js = Bundle('js/jquery-1.8.2.min.js', 'js/bootstrap-carousel.js',
             'js/es5-shim.min.js', 'js/home.js',
@@ -36,6 +36,10 @@ css = Bundle('css/reset.css', 'css/bootstrap.css', 'css/bootstrap-responsive.css
 assets.register('js_all', js)
 assets.register('css_all', css)
 
+@app.after_request
+def after_request(response):
+  response.direct_passthrough = False
+  return response
 
 @app.route('/')
 def index():
