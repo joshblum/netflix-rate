@@ -8,6 +8,7 @@ from sqlalchemy.exc import IntegrityError
 from sqlalchemy.sql.expression import ClauseElement
 
 from datetime import datetime
+from datetime import timedelta
 
 import flask
 import requests
@@ -67,6 +68,7 @@ def track():
       success = True
     except IntegrityError:
       try:
+        db.session.rollback()
         user = _update_user_timestamp(uuid)
         success = True
       except Exception as e:
