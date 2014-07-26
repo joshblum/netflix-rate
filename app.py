@@ -29,17 +29,19 @@ js = Bundle('js/jquery-1.8.2.min.js', 'js/bootstrap-carousel.js',
             'js/es5-shim.min.js', 'js/home.js',
             output='js/netflix-rate.min.js')
 
-css = Bundle('css/reset.css', 'css/bootstrap.css', 'css/bootstrap-responsive.css',
-             'css/base.css',
-             output='css/netflix-rate.min.css')
+css = Bundle('css/reset.css', 'css/bootstrap.css',
+             'css/bootstrap-responsive.css',
+             'css/base.css', output='css/netflix-rate.min.css')
 
 assets.register('js_all', js)
 assets.register('css_all', css)
+
 
 @app.after_request
 def after_request(response):
   response.direct_passthrough = False
   return response
+
 
 @app.route('/')
 def index():
