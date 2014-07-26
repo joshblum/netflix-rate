@@ -62,7 +62,7 @@ def track():
 
   if all([uuid, ip_addr, src]):
     try:
-      user =  User(uuid, ip_addr, src)
+      user = User(uuid, ip_addr, src)
       db.session.add(user)
       db.session.commit()
       success = True
@@ -83,18 +83,20 @@ def track():
   return jsonify(**{
       'success': success,
       'user': user,
-      'errors' : errors,
+      'errors': errors,
   })
+
 
 def _update_user_timestamp(uuid):
   """
     Update the timestamp when we last saw the user
   """
-  user = User.query.filter(User.uuid==uuid).first()
+  user = User.query.filter(User.uuid == uuid).first()
   user.created_at = datetime.utcnow()
   db.session.add(user)
   db.session.commit()
   return user
+
 
 def _send_mail():
   user_count = User.query.count()
@@ -102,13 +104,15 @@ def _send_mail():
     payload = '%d unique users.' % user_count
     requests.get(EMAIL_URL % payload)
 
+
 def _clear_old_users(weeks=4):
   """
     Delete any users that have not be undated in the past given weeks
   """
   current_time = datetime.utcnow()
   four_weeks_ago = current_time - timedelta(weeks=weeks)
-  users = User.query.filter(User.created_at<four_weeks_ago).delete()
+  users = User.query.filter(User.created_at < four_weeks_ago).delete()
+
 
 class User(db.Model):
   id = db.Column(db.Integer, primary_key=True)
