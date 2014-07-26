@@ -4,8 +4,8 @@ from flask import jsonify
 from flask.ext.assets import Environment, Bundle
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask_gzip import Gzip
+
 from sqlalchemy.exc import IntegrityError
-from sqlalchemy.sql.expression import ClauseElement
 
 from datetime import datetime
 from datetime import timedelta
@@ -26,10 +26,12 @@ assets = Environment(app)
 gzip = Gzip(app)
 
 js = Bundle('js/jquery-1.8.2.min.js', 'js/bootstrap-carousel.js',
-            'js/es5-shim.min.js', 'js/home.js', output='js/netflix-rate.min.js')
+            'js/es5-shim.min.js', 'js/home.js',
+            output='js/netflix-rate.min.js')
 
 css = Bundle('css/reset.css', 'css/bootstrap.css', 'css/bootstrap-responsive.css',
-             'css/base.css', output='css/netflix-rate.min.css')
+             'css/base.css',
+             output='css/netflix-rate.min.css')
 
 assets.register('js_all', js)
 assets.register('css_all', css)
@@ -111,7 +113,7 @@ def _clear_old_users(weeks=4):
   """
   current_time = datetime.utcnow()
   four_weeks_ago = current_time - timedelta(weeks=weeks)
-  users = User.query.filter(User.created_at < four_weeks_ago).delete()
+  User.query.filter(User.created_at < four_weeks_ago).delete()
 
 
 class User(db.Model):
