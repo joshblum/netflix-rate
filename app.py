@@ -4,6 +4,7 @@ from flask import jsonify
 from flask.ext.assets import Environment, Bundle
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask_gzip import Gzip
+from flask_cors import cross_origin
 
 from sqlalchemy.exc import IntegrityError
 
@@ -59,6 +60,7 @@ def page_not_found(error):
 
 
 @app.route('/track', methods=['POST'])
+@cross_origin()
 def track():
   uuid = request.form.get('uuid')
   ip_addr = request.remote_addr
