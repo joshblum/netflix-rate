@@ -60,6 +60,7 @@ def page_not_found(error):
 
 
 @app.route('/track', methods=['POST'])
+@app.route('/count', methods=['POST'])
 @cross_origin()
 def track():
   uuid = request.form.get('uuid')
