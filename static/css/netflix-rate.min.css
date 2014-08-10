@@ -6920,6 +6920,14 @@ body {
     height:50px;
 }
 
+.video-logo {
+  padding-right: 10px;
+}
+
+.about-copy {
+  width: 410px;
+}
+
 .icon {
     width: 16px;
     height: 16px;
@@ -6936,7 +6944,7 @@ body {
 }
 
 .download-unit {
-        padding: 20px 0 0;
+    padding: 20px 0 0;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
 }
@@ -6966,7 +6974,7 @@ body {
 .hero-unit h5 {
     color: #666;
     text-align: center;
-}   
+}
 
 .share {
     clear:both;
@@ -7049,7 +7057,7 @@ body {
 
 @media (max-width: 767px) and (orientation: landscape) {
     .chrome, .firefox {
-        margin-left: 128px
+        margin-left: 128px;
     }
 }
 

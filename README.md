@@ -1,4 +1,4 @@
 netflix-rate-server
 ===============
 
-Get and share your netflix-rate Chrome and Firefox extensions
+Get and share the netflix-rate Chrome and Firefox extensions, [netflix.burtonthird.com](http://netflix.burtonthird.com/).
