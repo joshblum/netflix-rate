@@ -130,10 +130,6 @@ body {
     margin-left:0px;
 }
 
-.blog-icon {
-    padding-bottom:4px;
-}
-
 @media (max-width: 767px) {
     .chrome, .firefox {
         margin-left: 57px
