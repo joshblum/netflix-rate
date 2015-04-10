@@ -26,12 +26,12 @@ gzip = Gzip(app)
 db = SQLAlchemy(app)
 assets = Environment(app)
 
-js = Bundle('js/jquery-1.8.2.min.js', 'js/bootstrap-carousel.js',
-            'js/es5-shim.min.js', 'js/home.js',
+js = Bundle('js/libs/jquery-1.8.2.min.js', 'js/libs/carousel.js',
+            'js/libs/es5-shim.min.js', 'js/home.js',
             output='js/netflix-rate.min.js')
 
-css = Bundle('css/reset.css', 'css/bootstrap.css',
-             'css/bootstrap-responsive.css',
+css = Bundle('css/libs/reset.css', 'css/libs/bootstrap.css',
+             'css/libs/bootstrap-responsive.css',
              'css/base.css', output='css/netflix-rate.min.css')
 
 assets.register('js_all', js)

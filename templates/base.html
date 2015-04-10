@@ -1,93 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title id="page_title"> netflix-rate | {{ title }}</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="netflix-rate Chrome or Firefox extensions">
-        <meta name="author" content="Joshua Blum">
 
-        <!--  styles -->
-        {% assets "css_all" %}
-            <link rel="stylesheet" href="{{ ASSET_URL }}" type="text/css" />
-        {% endassets %}
+<head>
+    <meta charset="utf-8">
+    <title id="page_title"> netflix-rate | {{ title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="netflix-rate Chrome or Firefox extensions">
+    <meta name="author" content="Joshua Blum">
 
-        <!-- analytics -->
+    <!--  styles -->
+    {% assets "css_all" %}
+    <link rel="stylesheet" href="{{ ASSET_URL }}" type="text/css" /> {% endassets %}
 
-        <script type="text/javascript">
-            //GA
-            var _gaq = _gaq || [];
-            _gaq.push(["_setAccount", "UA-38973783-1"]);
-            _gaq.push(["_trackPageview"]);
+    <!-- analytics -->
 
-            (function() {
-            var ga = document.createElement("script"); ga.type = "text/javascript"; ga.async = true;
-            ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";
-            var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ga, s);
-            })();
-        </script>
-        <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+    <script type="text/javascript">
+        //GA
+        var _gaq = _gaq || [];
+        _gaq.push(["_setAccount", "UA-38973783-1"]);
+        _gaq.push(["_trackPageview"]);
 
-        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-        <!--[if lt IE 9]>
+        (function()
+        {
+            var ga = document.createElement("script");
+            ga.type = "text/javascript";
+            ga.async = true;
+            ga.src = ("https:" == document.location.protocol ?
+                    "https://ssl" : "http://www") +
+                ".google-analytics.com/ga.js";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
             <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
 
-        <link rel="shortcut icon" href="/static/img/favicon.ico">
+    <link rel="shortcut icon" href="/static/img/favicon.ico">
 
-    </head>
+</head>
+</head>
 
-    <body>
+<body>
 
-        <!-- FB SDK-->
-        <div id="fb-root"></div>
+    <!-- FB SDK-->
+    <div id="fb-root"></div>
 
-        <!-- Begin page content -->
-        <div class="container">
-            {% block content %} {% endblock%}
-        </div>
+    <!-- Begin page content -->
+    <div class="container">
+        {% block content %} {% endblock%}
+    </div>
 
-        <div class="push"></div>
+    <div class="push"></div>
 
-        <div class="footer">
-            <div class="navbar">
-                <div class="navbar-inner nav-bg">
-                    <div>
-                            <ul class="nav pull-right">
-                                <li>
-                                    <a href="http://github.com/joshblum" target="_blank">
-                                        <img class="icon" src="https://github.com/favicon.ico"> github
-                                    </a>
-                                </li>
-                                <li> <a>|</a> </li>
-                                <li>
-                                    <a href="http://www.twitter.com/blumua" target="_blank">
-                                        <img src="https://si0.twimg.com/favicons/favicon.ico"> @blumua
-                                    </a>
-                                </li>
-                                <li> <a>|</a> </li>
-                                <li>
-                                    <a href="http://burtonthird.com/donate" target="_blank">
-                                        <i class="icon icon-gift"></i> donate
-                                    </a>
-                                </li>
-                                <li> <a>|</a> </li>
-                                <li>
-                                    <a href="mailto:netflix-rate-feedback@mit.edu" target="_blank">
-                                        <i class="icon-envelope"></i> contact
-                                    </a>
-                                </li>
-                                
-                            </ul>
-                    </div>
+    <div class="footer">
+        <div class="navbar">
+            <div class="navbar-inner nav-bg">
+                <div>
+                    <ul class="nav pull-right">
+                        <li>
+                            <a href="http://github.com/joshblum" target="_blank">
+                                <img class="icon" src="https://github.com/favicon.ico">                                github
+                            </a>
+                        </li>
+                        <li> <a>|</a> </li>
+                        <li>
+                            <a href="http://www.twitter.com/blumua" target="_blank">
+                                <img src="https://si0.twimg.com/favicons/favicon.ico">                                @blumua
+                            </a>
+                        </li>
+                        <li> <a>|</a> </li>
+                        <li>
+                            <a href="http://burtonthird.com/donate" target="_blank">
+                                <i class="icon icon-gift"></i> donate
+                            </a>
+                        </li>
+                        <li> <a>|</a> </li>
+                        <li>
+                            <a href="mailto:netflix-rate-feedback@mit.edu" target="_blank">
+                                <i class="icon-envelope"></i> contact
+                            </a>
+                        </li>
+
+                    </ul>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!--  javascript -->
+    <!--  javascript -->
 
-        {% assets "js_all" %}
-        <script type="text/javascript" src="{{ ASSET_URL }}"></script>
-        {% endassets %}
-    </body>
+    {% assets "js_all" %}
+    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+    {% endassets %}
+</body>
+
 </html>
